@@ -43,15 +43,15 @@ app.post('/scrape', async (req, res) => {
 
 // --- Serve Vite Frontend (Production Only) ---
 if (process.env.NODE_ENV === 'production') {
-  const distPath = path.join(__dirname, '..', 'dist');
-  console.log('Serving static from:', distPath);
+  // const distPath = path.join(__dirname, '..', 'dist');
+  // console.log('Serving static from:', distPath);
 
-  app.use(express.static(distPath));
+  // app.use(express.static(distPath));
 
-  // Catch-all for SPA routes
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
+  // // Catch-all for SPA routes
+  // app.get('*', (req, res) => {
+  //   res.sendFile(path.join(distPath, 'index.html'));
+  // });
 }
 
 // --- Start the Server (Only Once!) ---
